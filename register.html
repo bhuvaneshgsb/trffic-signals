@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Register - Traffic Rules Awareness</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+}
+
+.register-container{
+background:#fff;
+padding:40px;
+width:380px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+text-align:center;
+}
+
+.register-container h2{
+margin-bottom:20px;
+color:#2c5364;
+}
+
+.input-group{
+margin-bottom:15px;
+text-align:left;
+}
+
+.input-group label{
+font-size:14px;
+font-weight:bold;
+}
+
+.input-group input{
+width:100%;
+padding:10px;
+margin-top:5px;
+border-radius:5px;
+border:1px solid #ccc;
+outline:none;
+}
+
+.input-group input:focus{
+border-color:#2c5364;
+}
+
+.register-btn{
+width:100%;
+padding:10px;
+background:#2c5364;
+color:#fff;
+border:none;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+margin-top:10px;
+}
+
+.register-btn:hover{
+background:#203a43;
+}
+
+.error{
+color:red;
+font-size:13px;
+}
+
+.extra-links{
+margin-top:15px;
+font-size:14px;
+}
+
+.extra-links a{
+color:#2c5364;
+text-decoration:none;
+font-weight:bold;
+}
+
+.extra-links a:hover{
+text-decoration:underline;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="register-container">
+
+<h2>Create Account</h2>
+
+<form onsubmit="return validateForm()">
+
+<div class="input-group">
+<label>Full Name</label>
+<input type="text" id="name" placeholder="Enter your name">
+<p id="nameError" class="error"></p>
+</div>
+
+<div class="input-group">
+<label>Email</label>
+<input type="text" id="email" placeholder="Enter your email">
+<p id="emailError" class="error"></p>
+</div>
+
+<div class="input-group">
+<label>Phone Number</label>
+<input type="text" id="phone" placeholder="Enter phone number">
+<p id="phoneError" class="error"></p>
+</div>
+
+<div class="input-group">
+<label>Password</label>
+<input type="password" id="password" placeholder="Enter password">
+<p id="passwordError" class="error"></p>
+</div>
+
+<button type="submit" class="register-btn">Register</button>
+
+<div class="extra-links">
+<p>Already have an account? <a href="login.html">Login</a></p>
+</div>
+
+</form>
+
+</div>
+
+<script>
+
+function validateForm(){
+
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let phone=document.getElementById("phone").value;
+let password=document.getElementById("password").value;
+
+let nameRegex=/^[A-Za-z ]{3,}$/;
+let emailRegex=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+let phoneRegex=/^[6-9]\d{9}$/;
+let passwordRegex=/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{6,}$/;
+
+let valid=true;
+
+document.getElementById("nameError").innerHTML="";
+document.getElementById("emailError").innerHTML="";
+document.getElementById("phoneError").innerHTML="";
+document.getElementById("passwordError").innerHTML="";
+
+if(!nameRegex.test(name)){
+document.getElementById("nameError").innerHTML="Enter valid name (min 3 letters)";
+valid=false;
+}
+
+if(!emailRegex.test(email)){
+document.getElementById("emailError").innerHTML="Enter valid email";
+valid=false;
+}
+
+if(!phoneRegex.test(phone)){
+document.getElementById("phoneError").innerHTML="Enter valid 10 digit phone number";
+valid=false;
+}
+
+if(!passwordRegex.test(password)){
+document.getElementById("passwordError").innerHTML="Password must contain uppercase, lowercase and number";
+valid=false;
+}
+
+if(valid){
+
+alert("Registration Successful");
+
+
+window.location.href="login.html";
+
+}
+
+return false;
+
+}
+
+</script>
+
+</body>
+</html>

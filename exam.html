@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traffic Rules Exam</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f4f6f8;
+}
+
+header{
+background:linear-gradient(to right,#203a43,#2c5364);
+padding:30px 0;
+}
+
+.header-container{
+width:90%;
+margin:auto;
+}
+
+.header-container h1{
+color:white;
+margin-bottom:15px;
+}
+
+nav a{
+color:white;
+margin-right:20px;
+text-decoration:none;
+font-weight:bold;
+font-size:15px;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+section{
+padding:40px;
+}
+
+.quiz-box{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 4px 8px rgba(0,0,0,0.1);
+max-width:700px;
+margin:auto;
+}
+
+.question{
+margin-bottom:20px;
+}
+
+.question p{
+margin-bottom:10px;
+}
+
+button{
+background:#2c5364;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:5px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+background:#203a43;
+}
+
+.correct{
+color:green;
+font-weight:bold;
+}
+
+.wrong{
+color:red;
+font-weight:bold;
+}
+
+#result{
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="header-container">
+
+<h1>Traffic Rules Awareness</h1>
+
+<nav>
+<a href="home.html">Home</a>
+<a href="traffic-signs.html">Traffic Signs</a>
+<a href="Road Safety.html">Road Safety</a>
+<a href="exam.html">Exam</a>
+<a href="penalties.html">Penalties</a>
+<a href="login.html">Login</a>
+</nav>
+
+</div>
+</header>
+
+<section>
+
+<div class="quiz-box">
+
+<form id="quizForm">
+
+<div class="question">
+<p>1. What does a red traffic light mean?</p>
+<input type="radio" name="q1" value="a"> Go<br>
+<input type="radio" name="q1" value="b"> Stop<br>
+<input type="radio" name="q1" value="c"> Slow down<br>
+<p id="r1"></p>
+</div>
+
+<div class="question">
+<p>2. What should you do at a Stop sign?</p>
+<input type="radio" name="q2" value="a"> Slow down<br>
+<input type="radio" name="q2" value="b"> Stop completely<br>
+<input type="radio" name="q2" value="c"> Ignore<br>
+<p id="r2"></p>
+</div>
+
+<div class="question">
+<p>3. Seat belts are?</p>
+<input type="radio" name="q3" value="a"> Optional<br>
+<input type="radio" name="q3" value="b"> Mandatory<br>
+<input type="radio" name="q3" value="c"> Not needed<br>
+<p id="r3"></p>
+</div>
+
+<div class="question">
+<p>4. Speed limits are used to?</p>
+<input type="radio" name="q4" value="a"> Increase accidents<br>
+<input type="radio" name="q4" value="b"> Control traffic speed<br>
+<input type="radio" name="q4" value="c"> Waste time<br>
+<p id="r4"></p>
+</div>
+
+<div class="question">
+<p>5. Yellow traffic light means?</p>
+<input type="radio" name="q5" value="a"> Stop soon<br>
+<input type="radio" name="q5" value="b"> Go fast<br>
+<input type="radio" name="q5" value="c"> Ignore<br>
+<p id="r5"></p>
+</div>
+
+<div class="question">
+<p>6. Where should you not use horn?</p>
+<input type="radio" name="q6" value="a"> Highway<br>
+<input type="radio" name="q6" value="b"> Silent zone<br>
+<input type="radio" name="q6" value="c"> Village road<br>
+<p id="r6"></p>
+</div>
+
+<div class="question">
+<p>7. Pedestrian crossing means?</p>
+<input type="radio" name="q7" value="a"> Parking place<br>
+<input type="radio" name="q7" value="b"> Place for people to cross<br>
+<input type="radio" name="q7" value="c"> Bus stop<br>
+<p id="r7"></p>
+</div>
+
+<div class="question">
+<p>8. Helmet is required for?</p>
+<input type="radio" name="q8" value="a"> Bike riders<br>
+<input type="radio" name="q8" value="b"> Car drivers<br>
+<input type="radio" name="q8" value="c"> Bus drivers<br>
+<p id="r8"></p>
+</div>
+
+<div class="question">
+<p>9. No Parking sign means?</p>
+<input type="radio" name="q9" value="a"> You can park<br>
+<input type="radio" name="q9" value="b"> Parking allowed at night<br>
+<input type="radio" name="q9" value="c"> Parking not allowed<br>
+<p id="r9"></p>
+</div>
+
+<div class="question">
+<p>10. Green traffic light means?</p>
+<input type="radio" name="q10" value="a"> Stop<br>
+<input type="radio" name="q10" value="b"> Go<br>
+<input type="radio" name="q10" value="c"> Wait<br>
+<p id="r10"></p>
+</div>
+
+<button type="button" onclick="checkAnswers()">Submit Exam</button>
+
+</form>
+
+<div id="result"></div>
+
+</div>
+
+</section>
+
+<script>
+
+function checkAnswers(){
+
+let answers={
+q1:"b",
+q2:"b",
+q3:"b",
+q4:"b",
+q5:"a",
+q6:"b",
+q7:"b",
+q8:"a",
+q9:"c",
+q10:"b"
+};
+
+let correctText={
+q1:"Stop",
+q2:"Stop completely",
+q3:"Mandatory",
+q4:"Control traffic speed",
+q5:"Stop soon",
+q6:"Silent zone",
+q7:"Place for people to cross",
+q8:"Bike riders",
+q9:"Parking not allowed",
+q10:"Go"
+};
+
+let score=0;
+
+for(let i=1;i<=10;i++){
+
+let q="q"+i;
+let result="r"+i;
+
+let selected=document.querySelector('input[name="'+q+'"]:checked');
+
+if(selected){
+
+if(selected.value===answers[q]){
+
+document.getElementById(result).innerHTML="Correct ✅";
+document.getElementById(result).className="correct";
+score++;
+
+}
+
+else{
+
+document.getElementById(result).innerHTML="Wrong ❌ | Correct Answer: "+correctText[q];
+document.getElementById(result).className="wrong";
+
+}
+
+}
+
+else{
+
+document.getElementById(result).innerHTML="No answer selected | Correct Answer: "+correctText[q];
+document.getElementById(result).className="wrong";
+
+}
+
+}
+
+let resultText="Your Score: "+score+"/10";
+
+if(score>=5){
+resultText+=" | PASS ✅";
+}
+else{
+resultText+=" | FAIL ❌";
+}
+
+document.getElementById("result").innerHTML=resultText;
+
+}
+
+</script>
+
+</body>
+</html>

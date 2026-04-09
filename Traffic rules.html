@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traffic Rules Awareness</title>
+
+<style>
+
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial, Helvetica, sans-serif;}
+
+body{
+line-height:1.6;
+background:#f4f6f8;
+color:#333;
+}
+
+/* Header */
+
+header{
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:#fff;
+padding:20px 40px;
+}
+
+header h1{margin-bottom:10px;}
+
+nav a{
+color:#fff;
+margin-right:20px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{ text-decoration:underline; }
+
+/* Hero */
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:50px 40px;
+background:#fff;
+}
+
+.hero-text{max-width:55%;}
+
+.hero-text h2{
+font-size:2.2rem;
+margin-bottom:15px;
+color:#2c5364;
+}
+
+.hero-text p{
+font-size:1.1rem;
+margin-bottom:20px;
+}
+
+.hero-text button{
+background:#2c5364;
+color:#fff;
+border:none;
+padding:12px 20px;
+font-size:1rem;
+cursor:pointer;
+border-radius:5px;
+}
+
+.hero-text button:hover{background:#203a43;}
+
+.hero-image{
+width:35%;
+height:260px;
+}
+
+/* Sections */
+
+section{padding:40px;}
+
+section h2{
+text-align:center;
+margin-bottom:30px;
+color:#203a43;
+}
+
+/* Cards */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:#fff;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 8px rgba(0,0,0,0.08);
+text-align:center;
+}
+
+.icon{
+width:80px;
+height:80px;
+margin:0 auto 15px;
+}
+
+.card h3{
+margin-bottom:10px;
+color:#2c5364;
+}
+
+/* Footer */
+
+footer{
+background:#203a43;
+color:#fff;
+text-align:center;
+padding:15px;
+margin-top:20px;
+}
+
+/* Cookie Popup */
+
+.cookie-box{
+position:fixed;
+bottom:20px;
+left:20px;
+right:20px;
+background:#203a43;
+color:white;
+padding:20px;
+border-radius:8px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+.cookie-buttons{
+margin-top:10px;
+}
+
+.cookie-buttons button{
+margin-right:10px;
+padding:10px 18px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+color:white;
+}
+
+.accept-btn{
+background:#00c853;
+}
+
+.reject-btn{
+background:#d32f2f;
+}
+
+.accept-btn:hover{
+background:#00a844;
+}
+
+.reject-btn:hover{
+background:#b71c1c;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Traffic Rules Awareness</h1>
+
+<nav>
+<a href="#">Home</a>
+<a href="traffic Signs.html">Traffic Signs</a>
+<a href="Road Safety.html">Road Safety</a>
+<a href="exam.html">Exam</a>
+<a href="penalties.html">Penalties</a>
+<a href="login.html">Login</a>
+</nav>
+
+</header>
+
+<div class="hero">
+
+<div class="hero-text">
+
+<h2>Learn All Traffic Rules Easily</h2>
+
+<p>
+Traffic rules are designed to keep everyone safe on the road.
+This website helps you understand road signs, driving rules,
+and safety tips in a simple and clear way.
+</p>
+
+<a href="#rules">
+<button>Explore Traffic Rules</button>
+</a>
+
+</div>
+
+<div class="hero-image">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70"
+style="width:100%;height:100%;object-fit:cover;border-radius:15px;">
+</div>
+
+</div>
+
+<section id="rules">
+
+<h2>Important Traffic Rules</h2>
+
+<div class="cards">
+
+<div class="card">
+<svg class="icon" viewBox="0 0 100 100">
+<polygon points="30,5 70,5 95,30 95,70 70,95 30,95 5,70 5,30" fill="#d32f2f"/>
+<text x="50" y="60" text-anchor="middle" fill="#fff" font-size="28" font-weight="bold">STOP</text>
+</svg>
+<h3>Stop Rule</h3>
+<p>Always stop your vehicle at a red light or stop sign.</p>
+</div>
+
+<div class="card">
+<svg class="icon" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="45" fill="#fff" stroke="#000" stroke-width="5"/>
+<text x="50" y="60" text-anchor="middle" fill="#000" font-size="32" font-weight="bold">50</text>
+</svg>
+<h3>Speed Limit</h3>
+<p>Do not exceed the speed limit to avoid accidents.</p>
+</div>
+
+<div class="card">
+<svg class="icon" viewBox="0 0 100 100">
+<rect x="20" y="20" width="60" height="60" rx="10" fill="#2c5364"/>
+<line x1="25" y1="25" x2="75" y2="75" stroke="#fff" stroke-width="6"/>
+</svg>
+<h3>Seat Belt</h3>
+<p>Wearing a seat belt is mandatory for safety.</p>
+</div>
+
+<div class="card">
+<svg class="icon" viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="40" fill="#fff" stroke="#000" stroke-width="4"/>
+<line x1="25" y1="25" x2="75" y2="75" stroke="#d32f2f" stroke-width="6"/>
+</svg>
+<h3>No Honking</h3>
+<p>Avoid unnecessary honking, especially in silence zones.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<p>&copy; 2026 Traffic Rules Awareness | Drive Safe</p>
+</footer>
+
+<!-- Cookie Consent -->
+
+<div class="cookie-box" id="cookieBox">
+
+<span>This website uses cookies to improve your experience.</span>
+
+<div class="cookie-buttons">
+<button class="accept-btn" onclick="acceptCookies()">Accept</button>
+<button class="reject-btn" onclick="rejectCookies()">Reject</button>
+</div>
+
+</div>
+
+<script>
+
+function acceptCookies(){
+document.cookie="site_cookie=accepted; max-age="+60*60*24*30;
+document.getElementById("cookieBox").style.display="none";
+}
+
+function rejectCookies(){
+document.cookie="site_cookie=rejected; max-age="+60*60*24*30;
+document.getElementById("cookieBox").style.display="none";
+}
+
+window.onload=function(){
+
+if(document.cookie.indexOf("site_cookie=") !== -1){
+document.getElementById("cookieBox").style.display="none";
+}
+
+}
+
+</script>
+
+</body>
+</html>
